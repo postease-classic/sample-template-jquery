@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>POSTEASE SAMPLE</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css">
+<link rel="stylesheet" href="style.css">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="js/common_functions.js"></script>
+</head>
+<body>
+<div class="container">
+	<header>
+		<h1><a href="./">POSTEASE SAMPLE</a></h1>
+		<h2>Coded in jQuery</h2>
+	</header>
+</div>
+
+<div class="container">
+
+	<!-- メインコンテンツ -->
+	<main class="row col-md-8"></main>
+
+	<!-- サイドバー // -->
+	<div class="sidebar col-md-3 col-md-offset-1">
+
+		<!-- 検索ボックス // -->
+		<div class="search">
+			<form action="./">
+				<label for="text">ワード検索</label>
+				<input type="text" class="form-control" id="text" name="text" value="" placeholder="検索ワード">
+				<button type="submit" class="btn btn-default">検索</button>
+			</form>
+		</div>
+		<!-- // 検索ボックス -->
+
+		<!-- アーカイブ -->
+		<div id="archive" class="archive">
+      <h3 class="archive-heading">アーカイブ</h3>
+    </div>
+
+		<!-- カテゴリ -->
+		<div id="category" class="category">
+      <h3 class="category-heading">カテゴリー</h3>
+    </div>
+
+		<!-- タグ -->
+		<div id="tag" class="tag">
+      <h3 class="tag-heading">タグ</h3>
+    </div>
+
+	</div>
+	<!-- // サイドバー -->
+
+</div>
+
+<footer>
+	Powered by POSTEASE install type.
+</footer>
+<script>
+
+  /**
+   * 環境設定
+   * -------
+   * Note:
+   * 環境に合わせて変更してください。
+   * ---------------------------------------------------------------------------
+   */
+  
+  // APIベースURL
+  // POSTEASEの管理画面URL + '/api/json.php' がAPIのベースURLになります。
+  var $api_base = '//' + document.domain + '/manage/api/json.php';
+  
+  
+  
+  /**
+   * パラメータの取得
+   * -------------
+   * Note:
+   * WEBサイトのURLを、一般的なクエリストリングで運用する場合、修正の必要はありません。
+   * 整形されたURLを利用する場合は修正が必要です。
+   * ---------------------------------------------------------------------------
+   */
+  
+  // ポストID
+  var $post_id = (getParam('post_id')) ? getParam('post_id') : null;
+  
+  // ページ
+  var $page = (getParam('page')) ? getParam('page') : 1;
+  
+  // 検索ワード
+  var $text = (getParam('text')) ? getParam('text') : null;
+
+  // 絞込条件 アーカイブ 年
+  var $year = (getParam('year')) ? getParam('year') : null;
+
+  // 絞込条件 アーカイブ 月
+  var $month = (getParam('month')) ? getParam('month') : null;
+
+  // 絞込条件 アーカイブ 日
+  var $day = (getParam('day')) ? getParam('day') : null;
+
+  // 絞込条件 カテゴリー
+  var $category = (getParam('category')) ? getParam('category') : null;
+
+  // 絞込条件 タグ
+  var $tag  = (getParam('tag')) ? getParam('tag') : null;
+
+  // 絞込条件 作成者
+  var $created_by = (getParam('created_by')) ? getParam('created_by') : null;
+  
+  // 絞込表示 カテゴリー
+  var $category_text = (getParam('category_text')) ? getParam('category_text') : null;
+  
+  // 絞込表示 タグ
+  var $tag_text = (getParam('tag_text')) ? getParam('tag_text') : null;
+
+  // 絞込表示 作成者
+  var $author = (getParam('author')) ? getParam('author') : null;
+
+  
+</script>
+
+<!-- ポスト一覧 取得＆表示コード -->
+<script src="js/get_posts.js"></script>
+
+<!-- ポスト詳細 取得＆表示コード -->
+<script src="js/get_post.js"></script>
+
+<!-- アーカイブ一覧 取得＆表示コード -->
+<script src="js/get_archives.js"></script>
+
+<!-- カテゴリ一覧 取得＆表示コード -->
+<script src="js/get_categories.js"></script>
+
+<!-- タグ一覧 取得＆表示コード -->
+<script src="js/get_tags.js"></script>
+
+<!-- ページビュー カウント実行コード -->
+<script src="js/set_counter.js"></script>
+
+</body>
+</html>
