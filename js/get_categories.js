@@ -41,7 +41,7 @@ $(function(){
       $.each($data, function($key, $category)
       {
         $html_category += '<li>';
-        $html_category += '<a href="./?category='+$category.slug+'&category_text='+$category.label+'">'+$category.label+'</a> ';
+        $html_category += '<a href="?category='+$category.slug+'&category_text='+$category.label+'">'+$category.label+'</a> ';
         $html_category += '<span class="badge">'+$category.count+'</span>';
         if ($category.children)
         {
@@ -49,7 +49,7 @@ $(function(){
           $.each($category.children, function($key, $child)
           {
             $html_category += '<li>';
-            $html_category += '<a href="./?category='+$child.slug+'&category_text='+$child.label+'">'+$child.label+'</a> ';
+            $html_category += '<a href="?category='+$child.slug+'&category_text='+$child.label+'">'+$child.label+'</a> ';
             $html_category += '<span class="badge">'+$child.count+'</span>';
             $html_category += '</li>';
           });

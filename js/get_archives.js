@@ -39,15 +39,15 @@ $(function () {
     {
       $html_archive += '<ul>';
       $.each($data, function ($year, $year_row) {
-        $html_archive += '<li><a href="./?year=' + $year + '">' + $year + '年</a> <span class="badge">' + $year_row.count + '</span></li>';
+        $html_archive += '<li><a href="?year=' + $year + '">' + $year + '年</a> <span class="badge">' + $year_row.count + '</span></li>';
         $html_archive += '<li>';
         $html_archive += '<ul>';
         $.each($year_row.months, function ($month, $month_row) {
-          $html_archive += '<li><a href="./?year=' + $year + '&month=' + $month + '"> ' + $month + '月</a> <span class="badge">' + $month_row.count + '</span></li>';
+          $html_archive += '<li><a href="?year=' + $year + '&month=' + $month + '"> ' + $month + '月</a> <span class="badge">' + $month_row.count + '</span></li>';
           $html_archive += '<li>';
           $html_archive += '<ul>';
           $.each($month_row.days, function ($day, $day_row) {
-            $html_archive += '<li><a href="./?year=' + $year + '&month=' + $month + '&day=' + $day + '"> ' + $day + '日</a> <span class="badge">' + $day_row.count + '</span></li>';
+            $html_archive += '<li><a href="?year=' + $year + '&month=' + $month + '&day=' + $day + '"> ' + $day + '日</a> <span class="badge">' + $day_row.count + '</span></li>';
           });
           $html_archive += '</ul>';
           $html_archive += '</li>';

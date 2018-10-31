@@ -39,7 +39,7 @@ $(function(){
     {
       $.each($data, function ($key, $tag) {
         $html_tag += '<span class="tag-label">';
-        $html_tag += '<a href="./?tag=' + $tag.slug + '&tag_text=' + $tag.label + '">' + $tag.label + '</a> ';
+        $html_tag += '<a href="?tag=' + $tag.slug + '&tag_text=' + $tag.label + '">' + $tag.label + '</a> ';
         $html_tag += '<span class="badge">' + $tag.count + '</span>';
         $html_tag += '</span>';
       });
