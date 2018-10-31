@@ -1,9 +1,9 @@
 /**
- * This is just sample theme of PostEase.
+ * This is just sample theme of POSTEASE.
  * @name    Gentle Donkey
- * @author  postease.org
+ * @author  POSTEASE.ORG
  * @license GNU (GPL ver.2)
- * @version 1.0
+ * @version 1.1
  */
 
 @import "//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css";
@@ -126,7 +126,22 @@ header h2 {
 /* Main
  -------------------------------------------------------------*/
 main {
+	position: relative;
 	margin-bottom: 10em;
+	min-height: 100vh;
+}
+.content-loader {
+	position: absolute;
+	top: 240px;
+	left: calc(50% - 30px);
+	font-size: 60px;
+	color: #ccc;
+}
+@media (max-width: 992px)
+{
+	.content-loader {
+		top: 200px;
+	}
 }
 .condition > div {
 	margin: 1.5em 0;

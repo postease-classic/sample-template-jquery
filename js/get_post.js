@@ -33,7 +33,16 @@ $(function()
        * -----------------------------------------------------------------------
        */
       //console.log(JSON.stringify($data,null,'\t'));
-    
+  
+      
+      /*
+       * メタタグ書換え
+       * -----------------------------------------------------------------------
+       */
+      var $new_title = $data.title + ' | ' + $('title').html();
+      $('title').html($new_title);
+      $('meta[name=description]').attr('content', html2text($data.content));
+      
       
       /*
        * HTML生成
@@ -97,6 +106,7 @@ $(function()
        * HTMLレンダリング
        * -----------------------------------------------------------------------
        */
+      $('.content-loader').hide();
       $('main').append($html_post);
       
       

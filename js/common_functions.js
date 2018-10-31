@@ -105,6 +105,21 @@ function getCookie($key)
 
 
 /**
+ * HTML to Plane Text
+ * @param $str
+ * @returns {string | bool(false)}
+ */
+function html2text($str)
+{
+	if ($str)
+	{
+		return $str.replace(/(\s|\&nbsp;|<(\/)*("[^"]*"|'[^']*'|[^'">])*>)/g,'');
+	}
+	return false;
+}
+
+
+/**
  * New Line to BR
  * @param str
  * @returns {string | bool(false)}
@@ -134,4 +149,5 @@ function br2nl(str)
 	}
 	return false;
 }
+
 
