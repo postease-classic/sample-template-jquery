@@ -22,96 +22,140 @@ $(function()
       }
     })
     
-    .done(function ($data)
+    .done(function ($post)
     {
-      
-      /*
-       * デバッグ
-       * -------
-       * Note:
-       * コンソールで取得データを確認するには以下をコメントインしてください。
-       * -----------------------------------------------------------------------
-       */
-      //console.log(JSON.stringify($data,null,'\t'));
+      if (Object.keys($post).length)
+      {
+        /*
+         * デバッグ
+         * -------
+         * Note:
+         * コンソールで取得データを確認するには以下をコメントインしてください。
+         * -----------------------------------------------------------------------
+         */
+        //console.log(JSON.stringify($post,null,'\t'));
+    
+        
+        /*
+         * メタタグ書換え
+         * -----------------------------------------------------------------------
+         */
+        var $this_title = $post.title + ' | ' + $('title').html();
+        var $raw_content = html2text($post.content).substr(0, 100)
+        var $pos = $raw_content.lastIndexOf('。');
+        var $this_description = ($pos == -1) ? $raw_content : $raw_content.substr(0, $pos) + '。';
+        $('title').html($this_title);
+        $('meta[name=description]').attr('content', $this_description);
+        $('meta[property="og:url"]').attr('content', location.href);
+        $('meta[property="og:type"]').attr('content', 'article');
+        $('meta[property="og:title"]').attr('content', $this_title);
+        $('meta[property="og:description"]').attr('content', $this_description);
+        $('meta[property="og:image"]').attr('content', $post.eyecatch_2x);
   
-      
-      /*
-       * メタタグ書換え
-       * -----------------------------------------------------------------------
-       */
-      var $new_title = $data.title + ' | ' + $('title').html();
-      $('title').html($new_title);
-      $('meta[name=description]').attr('content', html2text($data.content));
-      
-      
-      /*
-       * HTML生成
-       * -----------------------------------------------------------------------
-       */
-      var $html_post = '';
-      if (Object.keys($data).length) {
-        $html_post += '<div class="post">';
-        $html_post += '<h2 class="post-heading">' + $data.title + '</h2>';
-        if ($data.eyecatch) {
-          $html_post += '<div class="post-eyecatch"><img src="' + $data.eyecatch + '" alt="' + $data.title + '"></div>';
-        }
-        $html_post += '<div class="post-metas">';
-        $html_post += '<time class="post-date">' + $data.publish_date + '</time>';
-        if ($data.counter !== undefined && $data.counter.length !== 0) {
-          $.each($data.counter, function ($key, $counter) {
-            if ($key == 1) {
-              $html_post += '<span class="post-counter"><i class="fa fa-heart" aria-hidden="true"></i> ' + $counter.count + ' views</span>';
-            }
-          });
-        }
-        $html_post += '<span class="post-category">';
-        if ($data.categories.length !== 0) {
-          $.each($data.categories, function ($key, $category) {
-            $html_post += '<a href="./?category=' + $category.slug + '&category_text=' + $category.label + '">' + $category.label + '</a> ';
-          });
-        }
-        $html_post += '</span>';
-        $html_post += '<span class="post-tag">';
-        if ($data.tags.length !== 0) {
-          $.each($data.tags, function ($key, $tag) {
-            $html_post += '<a href="./?tag=' + $tag.slug + '&tag_text=' + $tag.label + '">' + $tag.label + '</a> ';
-          });
-        }
-        $html_post += '</span>';
-        $html_post += '<div class="post-extra">';
-        $html_post += '<span class="post-recommend">';
-        if ($data.anchor > 0) {
-          $html_post += 'recommend : ';
-          for ($i_anchor = 1; $i_anchor <= $data.anchor; $i_anchor++) {
-            $html_post += '<i class="fa fa-star" aria-hidden="true"></i> ';
+  
+        /*
+         * ローディングの停止
+         * -------------------------------------------------------------------------
+         */
+        $('.content-loader').hide();
+    
+        
+        /*
+         * ポスト詳細テンプレートの読み込み
+         * -------------------------------------------------------------------------
+         */
+        $.get('tpl/post.html', {dataType: 'html'}).done(function($template)
+        {
+          $('main').append($template);
+          
+          
+          /*
+           * データの書き出し
+           * -------------------------------------------------------------------------
+           */
+          // Title
+          $('.post-heading').text($post.title);
+          
+          // Eyecatch
+          if ($post.eyecatch)
+          {
+            $('.post-eyecatch').html('<img src="' + $post.eyecatch + '" srcset="' + $post.eyecatch_1x + ' 1x, ' + $post.eyecatch_2x + ' 2x" alt="' + $post.title + '">');
           }
-        }
-        $html_post += '</span>';
-        $html_post += '<span class="post-author">Author : <a href="./?clear=1&created_by=' + $data.created_by + '&author=' + $data.author + '">' + $data.author + '</a></span>';
-        $html_post += '</div>';
-        $html_post += '</div>';
-        $html_post += '<div class="post-content">' + $data.content + '</div>';
-        $html_post += '<span class="post-signiture">Written by : ' + $data.author + '</span>';
-        $html_post += '<div class="post-prevnext">';
-        $html_post += '<span class="post-back"><a href="#" onclick="javascript:window.history.back(-1);return false;"><i class="fa fa-chevron-left" aria-hidden="true"></i> 戻る</a></span>';
-        $html_post += '</div>';
-        $html_post += '</div>';
+          
+          // Publish DateTime
+          $('.post-date').text($post.publish_datetime);
+  
+          // Content
+          $('.post-content').html($post.content);
+  
+          // Signature
+          $('.post-signature').text('Written by : ' + $post.author);
+  
+          // Author
+          $('.post-author').html('Author : <a href="./?clear=1&amp;created_by=' + $post.created_by + '&amp;author=' + $post.author + '">' + $post.author + '</a>');
+  
+          // Page View
+          if ($post.counter !== undefined && $post.counter.length !== 0)
+          {
+            $.each($post.counter, function($key, $counter)
+            {
+              if ($key == 1)
+              {
+                $('.post-counter').filter(':last').html('<i class="fas fa-eye"></i> ' + $counter.count + ' views');
+              }
+            });
+          }
+          
+          // Category
+          if ($post.categories.length !== 0)
+          {
+            var $html = '<i class="fa fa-tag" aria-hidden="true"></i> ';
+            $.each($post.categories, function($key_cat, $category)
+            {
+              $html += '<a href="?category=' + $category.slug + '&category_text=' + $category.label + '">' + $category.label + '</a>'
+            });
+            $('.post-category').html($html);
+          }
+  
+          // Tag
+          if ($post.tags.length !== 0)
+          {
+            var $html = '<i class="fa fa-tags" aria-hidden="true"></i>';
+            $.each($post.tags, function($key_tag, $tag)
+            {
+              $html += '<a href="?tag=' + $tag.slug + '&tag_text=' + $tag.label + '">' + $tag.label + '</a>'
+            });
+            $('.post-tag').html($html);
+          }
+  
+          // Recommend
+          if ($post.anchor > 0)
+          {
+            var $html= 'recommend : ';
+            for ($i_anchor = 1; $i_anchor <= $post.anchor; $i_anchor ++)
+            {
+              $html += '<i class="fa fa-star" aria-hidden="true"></i> ';
+            }
+            $('.post-recommend').html($html);
+          }
+          
+          // Social Facebook
+          $('.facebook').attr('href', 'http://www.facebook.com/share.php?u=' + location.href);
+          
+          // Social Line
+          $('.line').attr('href', 'https://social-plugins.line.me/lineit/share?url=' + location.href);
+          
+          // Social Twitter
+          $('.twitter').attr('href', 'https://twitter.com/intent/tweet?text=' + encodeURI($this_title) + '&url=' + location.href + '&hashtags=postease');
+          
+        });
       }
       else {
-        $html_post += '<p>お探しのポストは見つかりませんでした。</p>';
+        $('main').append('<p>お探しのポストは見つかりませんでした。</p>');
       }
       
-      
-      /*
-       * HTMLレンダリング
-       * -----------------------------------------------------------------------
-       */
-      $('.content-loader').hide();
-      $('main').append($html_post);
-      
-      
     })
-    .fail(function($data)
+    .fail(function($post)
     {
       alert('情報が取得できません。APIの設定などを確認してください。');
     });

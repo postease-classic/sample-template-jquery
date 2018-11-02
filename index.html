@@ -1,20 +1,30 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="utf-8">
-<title>POSTEASE SAMPLE</title>
-<meta name="description" content="">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css">
-<link rel="stylesheet" href="style.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-<script src="js/common_functions.js"></script>
+  <meta charset="utf-8">
+  <title>POSTEASE SAMPLE</title>
+  <meta name="description" content="ヘッドレスCMS「POSTEASE（ポストイーズ）」を利用してjQueryだけでCMSを実装しています。">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta property="og:site_name" content="POSTEASE SAMPLE">
+  <meta property="og:url" content="http://sample00.doteki.biz">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="POSTEASE SAMPLE">
+  <meta property="og:description" content="ヘッドレスCMS「POSTEASE（ポストイーズ）」を利用してjQueryだけでCMSを実装しています。">
+  <meta property="og:image" content="http://sample00.doteki.biz/img/main.png">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:text:title" content="POSTEASE SAMPLE">
+  <meta name="twitter:card" content="summary">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script src="js/common_functions.js"></script>
 </head>
 <body>
 <div class="container">
 	<header>
-		<h1><a href="?">POSTEASE SAMPLE</a></h1>
+		<h1><a href="index.html">POSTEASE SAMPLE</a></h1>
 		<h2>Coded in jQuery</h2>
 	</header>
 </div>
@@ -40,27 +50,41 @@
 		<!-- // 検索ボックス -->
 
 		<!-- アーカイブ -->
-		<div id="archive" class="archive">
-      <h3 class="archive-heading">アーカイブ</h3>
+		<div id="archive" class="archive sidebar-block">
+      <h3>アーカイブ</h3>
     </div>
 
 		<!-- カテゴリ -->
-		<div id="category" class="category">
-      <h3 class="category-heading">カテゴリー</h3>
+		<div id="category" class="category sidebar-block">
+      <h3>カテゴリー</h3>
     </div>
 
 		<!-- タグ -->
-		<div id="tag" class="tag">
-      <h3 class="tag-heading">タグ</h3>
+		<div id="tag" class="tag sidebar-block">
+      <h3>タグ</h3>
     </div>
-
+    
+    <!-- お問合わせリンク -->
+    <div class="sideContent">
+      <h3 class="sideContent-heading">リンク</h3>
+      <div class="sideContent-content">
+        <i class="far fa-envelope"></i>
+        <a href="contact.html">お問い合わせはこちら</a>
+      </div>
+    </div>
+    
 	</div>
 	<!-- // サイドバー -->
-
+  
 </div>
 
 <footer>
-	Powered by POSTEASE install type.
+  <div class="social">
+    <a rel="nofollow" target="_blank" href="" class="social-button facebook"><i class="fab fa-facebook-square"></i></a>
+    <a rel="nofollow" target="_blank" href="" class="social-button line"><i class="fab fa-line"></i></a>
+    <a rel="nofollow" target="_blank" href="" class="social-button twitter"><i class="fab fa-twitter-square"></i></a>
+  </div>
+  <small>Powered by POSTEASE</small>
 </footer>
 <script>
 

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="utf-8">
+	<title>CONTACT | POSTEASE SAMPLE</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css">
+	<link rel="stylesheet" href="style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="js/common_functions.js"></script>
+</head>
+<body>
+<div class="container">
+	<header>
+		<h1><a href="index.html">POSTEASE SAMPLE</a></h1>
+		<h2>Coded in jQuery</h2>
+	</header>
+</div>
+
+<div class="container">
+	
+	<!-- メインコンテンツ -->
+	<main class="row col-md-10 col-md-offset-1">
+		<!-- コンタクトフォーム // -->
+		<div class="contact">
+			<h2 class="contact-heading">お問い合わせ</h2>
+			<dl>
+				<dt>お名前</dt>
+				<dd>
+          <input type="text" id="name" name="name" required aria-required="true">
+          <div class="alert-info" role="alert" id="name_valid"></div>
+        </dd>
+        <dt>メールアドレス</dt>
+        <dd>
+          <input type="email" id="email" name="email" required aria-required="true">
+          <div class="alert-info" role="alert" id="email_valid"></div>
+        </dd>
+				<dt>お問い合わせ内容</dt>
+				<dd>
+          <textarea id="content" name="content" required></textarea>
+          <div class="alert-info" role="alert" id="content_valid"></div>
+        </dd>
+				<dd class="contact-submit">
+          <i class="fa fa-spin fa-circle-o-notch contact-loader" aria-hidden="true"></i>
+          <button type="submit" id="submit" class="btn btn-lg btn-default">送信</button>
+        </dd>
+			</dl>
+			
+		</div>
+		<!-- // コンタクトフォーム -->
+	</main>
+	
+</div>
+
+<footer>
+	Powered by POSTEASE install type.
+</footer>
+<script>
+  
+  /**
+   * 環境設定
+   * -------
+   * Note:
+   * 環境に合わせて変更してください。
+   * ---------------------------------------------------------------------------
+   */
+    
+    // APIベースURL
+    // POSTEASEの管理画面URL + '/api/json.php' がAPIのベースURLになります。
+  var $api_base = '//' + document.domain + '/manage/api/json.php';
+
+</script>
+
+<!-- フォーム送信＆メール送信コード -->
+<script src="js/submit_form.js"></script>
+
+</body>
+</html>

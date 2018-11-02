@@ -6,7 +6,7 @@
  * @version 1.1
  */
 
-@import url(https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css);
+@import url(https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css);
 @import url(https://fonts.googleapis.com/earlyaccess/notosansjapanese.css);
 @import url(https://fonts.googleapis.com/css?family=Titillium+Web:400italic);
 
@@ -78,7 +78,7 @@ header h1 a:hover {
 	text-decoration: none;
 }
 header h2 {
-	color: #ccc;
+	color: #777;
 	font-size: 1em;
 }
 .option {
@@ -125,6 +125,9 @@ header h2 {
 
 /* Main
  -------------------------------------------------------------*/
+.container {
+  position: relative;
+}
 main {
 	position: relative;
 	margin-bottom: 10em;
@@ -147,9 +150,13 @@ main {
 	margin: 1.5em 0;
 	border: 1px solid #ccc;
 }
+
+
+
+/* Posts / Post
+ -------------------------------------------------------------*/
 .post {
-	margin-bottom: 3em;
-	padding-bottom: 3em;
+  margin-bottom: 3em;
 }
 .post-heading {
 	font-size: 2em;
@@ -167,12 +174,12 @@ main {
 .post-eyecatch {
 	display: inline;
 }
-.post-eyecatch > img {
+.post-eyecatch img {
 	max-width: 100%;
 	margin-bottom: 1em;
 	vertical-align: top;
 }
-.post-eyecatch > img:hover {
+.post-eyecatch img:hover {
 	opacity: 0.8;
 }
 .post-metas {
@@ -191,7 +198,7 @@ main {
 .post-extra {
 	display: block;
 	margin-top: 3em;
-	margin-bottom: 3em;
+	margin-bottom: 2em;
 	margin-left: .5em;
 	font-family: 'Titillium Web', 'Noto Sans Japanese', sans-serif;
 	font-style: italic;
@@ -201,11 +208,15 @@ main {
 	display: block;
 	margin-bottom: 1em;
 }
+.post-separator {
+  padding-top: 3em;
+  border-bottom: 1px solid #d0d0d0;
+}
 .post-comments > * {
 	display: block;
 	margin-bottom: 0.5em;
 }
-.post-signiture {
+.post-signature {
 	display: block;
 	margin-top: 2em;
 	font-family: 'Titillium Web', 'Noto Sans Japanese', sans-serif;
@@ -239,6 +250,7 @@ main {
 	margin-bottom: 1em;
 }
 .post-content {
+  position: relative;
 	margin: 3em 0;
 	padding-top: 3em;
 	padding-bottom: 2em;
@@ -255,23 +267,25 @@ main {
 }
 .post-category {
 	font-family: 'Titillium Web', 'Noto Sans Japanese', sans-serif;
-	display: block;
+  font-style: italic;
+  display: block;
 	margin-left: .5em;
 	margin-bottom: .5em;
 	font-size: .85em;
 }
 .post-category a {
-	margin-right: .5em;
+  margin-right: .8em;
 }
 .post-tag {
 	font-family: 'Titillium Web', 'Noto Sans Japanese', sans-serif;
-	display: block;
+  font-style: italic;
+  display: block;
 	margin-left: .5em;
 	margin-bottom: .5em;
 	font-size: .85em;
 }
 .post-tag a {
-	margin-right: .5em;
+	margin-right: .8em;
 }
 .post-counter {
 	font-family: 'Titillium Web', 'Noto Sans Japanese', sans-serif;
@@ -285,6 +299,10 @@ main {
 	margin-top: .5em;
 	font-size: .85em;
 	text-align: right;
+}
+.fa-eye, .fa-tag, .fa-tags {
+  color: #777;
+  margin-right: .4em;
 }
 
 @media (max-width: 992px)
@@ -309,6 +327,8 @@ main {
 
 
 
+/* Comments
+ -------------------------------------------------------------*/
 .comments {
 	margin-bottom: 10em;
 }
@@ -385,6 +405,30 @@ main {
 
 
 
+/* Social
+ -------------------------------------------------------------*/
+.social {
+  text-align: center;
+  margin: -2em 0 -1em 0;
+}
+.social-article {
+  text-align: right;
+  margin-bottom: -3em;
+}
+.social-button {
+  color: #777;
+  font-size: 1.8em;
+  padding: .2em;
+}
+.social-article a:link, .social-article a:visited {
+  color: #777;
+}
+.social-article a:hover {
+  color: #999;
+}
+
+
+
 /* Sidebar
  -------------------------------------------------------------*/
 .sidebar {
@@ -401,7 +445,7 @@ main {
 .search button {
 	margin-top: .5em;
 }
-.archive {
+.sidebar-block {
 	margin-bottom: 5em;
 	border-top:  solid 3px #000;
 }
@@ -415,20 +459,12 @@ main {
 .archive ul li {
 	margin-bottom: 0.25em;
 }
-.category {
-	margin-bottom: 5em;
-	border-top:  solid 3px #000;
-}
 .category ul {
 	padding-left: 1em;
 }
 .category ul ul {
 	padding-left: 2em;
 	margin-top: 0.5em
-}
-.tag {
-	margin-bottom: 5em;
-	border-top:  solid 3px #000;
 }
 .tag-label {
 	display: inline-block;
@@ -494,9 +530,13 @@ main {
 input, textarea, select {
 	display: block;
 	width: 100%;
-	padding: .5em;
+	padding: .7em;
 	border: 1px solid #999;
 	border-radius: 2px;
+  margin-bottom: .2em;
+}
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px #fff inset;
 }
 input[type="radio"],
 input[type="checkbox"] {
@@ -512,7 +552,8 @@ input[type="text"], textarea, select {
     appearance: none;
 }
 textarea {
-	min-height: 10em;
+	min-height: 16em;
+  line-height: 1.8em;
 }
 .contact {
 	padding: .5em;
@@ -534,6 +575,25 @@ textarea {
 	text-align: center;
 	color: #d43f3a;
 }
+.contact dt {
+	margin-bottom: .5em;
+  color: #777;
+}
+.contact dd {
+	margin-bottom: 2em;
+}
+.contact-submit {
+	text-align: center;
+}
+.contact-loader {
+  font-size: 30px;
+  color: #777;
+}
+
+
+
+/* Pe-form
+ -------------------------------------------------------------*/
 .pe-form {
 	width: 100%;
 }
@@ -624,12 +684,14 @@ td label {
  -------------------------------------------------------------*/
 footer {
 	background-color: #000;
-	padding: 5em;
+	padding: 4em 0 4em 0;
 	text-align: center;
 	color: #28bbf8;
-	font-size: .85em;
 }
-
+footer small {
+  display: block;
+  margin-top: 2em;
+}
 .close {
 	margin-top: .2em;
 }
