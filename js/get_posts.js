@@ -92,9 +92,11 @@ $(function ()
            * ポスト一覧テンプレートの読み込み
            * -------------------------------------------------------------------------
            */
-          $.get('tpl/posts.html', {dataType: 'html'}).done(function($template)
-          {
-            $('#posts').append($template);
+          // $.get('tpl/posts.html', {dataType: 'html'}).done(function($template)
+          // {
+          
+          
+            $('#posts').append($template_posts);
   
   
             /*
@@ -170,7 +172,7 @@ $(function ()
             // Social Twitter
             $('.twitter').attr('href', 'https://twitter.com/intent/tweet?text=' + encodeURI('POSTEASE SAMPLE') + '&url=' + location.href + '&hashtags=postease');
             
-          });
+          // });
         });
       }
       else {

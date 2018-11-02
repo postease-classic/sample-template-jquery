@@ -64,9 +64,9 @@ $(function()
          * ポスト詳細テンプレートの読み込み
          * -------------------------------------------------------------------------
          */
-        $.get('tpl/post.html', {dataType: 'html'}).done(function($template)
-        {
-          $('main').append($template);
+        // $.get('tpl/post.html', {dataType: 'html'}).done(function($template)
+        // {
+          $('main').append($template_post);
           
           
           /*
@@ -148,7 +148,7 @@ $(function()
           // Social Twitter
           $('.twitter').attr('href', 'https://twitter.com/intent/tweet?text=' + encodeURI($this_title) + '&url=' + location.href + '&hashtags=postease');
           
-        });
+        // });
       }
       else {
         $('main').append('<p>お探しのポストは見つかりませんでした。</p>');
