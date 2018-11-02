@@ -6,4 +6,4 @@
  * 環境に合わせて変更してください。
  * ---------------------------------------------------------------------------
  */
-var $api_base = 'http://sample00.doteki.biz/manage/api/json.php';
+var $api_base = 'https://sample00.doteki.biz/manage/api/json.php';
