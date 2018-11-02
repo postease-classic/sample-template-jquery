@@ -3,13 +3,13 @@
 <head>
   <meta charset="utf-8">
   <title>POSTEASE SAMPLE</title>
-  <meta name="description" content="ヘッドレスCMS「POSTEASE（ポストイーズ）」を利用してjQueryだけでCMSを実装しています。">
+  <meta name="description" content="このサイトはヘッドレスCMS「POSTEASE（ポストイーズ）」を利用してjQueryだけでCMSを実装しています。WindowsやMacのローカル環境でも動作します。">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta property="og:site_name" content="POSTEASE SAMPLE">
   <meta property="og:url" content="http://sample00.doteki.biz">
   <meta property="og:type" content="website">
   <meta property="og:title" content="POSTEASE SAMPLE">
-  <meta property="og:description" content="ヘッドレスCMS「POSTEASE（ポストイーズ）」を利用してjQueryだけでCMSを実装しています。">
+  <meta property="og:description" content="このサイトはヘッドレスCMS「POSTEASE（ポストイーズ）」を利用してjQueryだけでCMSを実装しています。WindowsやMacのローカル環境でも動作します。">
   <meta property="og:image" content="http://sample00.doteki.biz/img/main.png">
   <meta property="og:locale" content="ja_JP">
   <meta name="twitter:text:title" content="POSTEASE SAMPLE">
@@ -18,8 +18,8 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
   <link rel="stylesheet" href="style.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-  <script src="js/common_functions.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" async></script>
+  <script src="js/util.js"></script>
 </head>
 <body>
 <div class="container">
@@ -41,7 +41,7 @@
 
 		<!-- 検索ボックス // -->
 		<div class="search">
-			<form action="./">
+			<form action="">
 				<label for="text">ワード検索</label>
 				<input type="text" class="form-control" id="text" name="text" value="" placeholder="検索ワード">
 				<button type="submit" class="btn btn-default">検索</button>
@@ -86,21 +86,8 @@
   </div>
   <small>Powered by POSTEASE</small>
 </footer>
-<script>
 
-  /**
-   * 環境設定
-   * -------
-   * Note:
-   * 環境に合わせて変更してください。
-   * ---------------------------------------------------------------------------
-   */
-  
-  // APIベースURL
-  // POSTEASEの管理画面URL + '/api/json.php' がAPIのベースURLになります。
-  var $api_base = 'http://sample00.doteki.biz/manage/api/json.php';
-  
-  
+<script>
   
   /**
    * パラメータの取得
@@ -150,26 +137,29 @@
   
 </script>
 
-<!-- ポスト一覧 取得＆表示コード -->
-<script src="js/get_posts.js"></script>
-
-<!-- ポスト詳細 取得＆表示コード -->
-<script src="js/get_post.js"></script>
-
-<!-- アーカイブ一覧 取得＆表示コード -->
-<script src="js/get_archives.js"></script>
-
-<!-- カテゴリ一覧 取得＆表示コード -->
-<script src="js/get_categories.js"></script>
-
-<!-- タグ一覧 取得＆表示コード -->
-<script src="js/get_tags.js"></script>
-
-<!-- ページビュー カウント実行コード -->
-<script src="js/set_counter.js"></script>
+<!-- 設定 -->
+<script src="js/config.js" async></script>
 
 <!-- テンプレート -->
-<script src="js/templates.js"></script>
+<script src="js/templates.js" async></script>
+
+<!-- [APIリクエスト] ポスト一覧 取得＆表示コード -->
+<script src="js/api/get_posts.js" async></script>
+
+<!-- [APIリクエスト] ポスト詳細 取得＆表示コード -->
+<script src="js/api/get_post.js" async></script>
+
+<!-- [APIリクエスト] アーカイブ一覧 取得＆表示コード -->
+<script src="js/api/get_archives.js" async></script>
+
+<!-- [APIリクエスト] カテゴリ一覧 取得＆表示コード -->
+<script src="js/api/get_categories.js" async></script>
+
+<!-- [APIリクエスト] タグ一覧 取得＆表示コード -->
+<script src="js/api/get_tags.js" async></script>
+
+<!-- [APIリクエスト] ページビュー カウント実行コード -->
+<script src="js/api/set_counter.js" async></script>
 
 </body>
 </html>

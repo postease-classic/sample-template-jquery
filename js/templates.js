@@ -1,3 +1,7 @@
+/*
+ * ポスト一覧テンプレート
+ * -------------------------------------------------------------------------
+ */
 var $template_posts =
   '<div class="post col-md-12 row">\n' +
   '\t<h2 class="post-heading"></h2>\n' +
@@ -5,7 +9,6 @@ var $template_posts =
   '\t\t<div class="post-eyecatch" href=""></div>\n' +
   '\t\t<time class="post-date"></time>\n' +
   '\t\t<span class="post-counter">\n' +
-  '\t\t\t<i class="fa fa-heart" aria-hidden="true"></i>\n' +
   '\t\t</span>\n' +
   '\t\t<span class="post-category"></span>\n' +
   '\t\t<span class="post-tag"></span>\n' +
@@ -20,6 +23,11 @@ var $template_posts =
   '\t<div class="col-md-12 post-separator"></div>\n' +
   '</div>';
 
+
+/*
+ * ポスト詳細テンプレート
+ * -------------------------------------------------------------------------
+ */
 var $template_post =
   '<div class="post">\n' +
   '\t<h2 class="post-heading"></h2>\n' +

@@ -65,14 +65,14 @@ $(function ()
   
       /*
        * データ件数取得
-       * -------------------------------------------------------------------------
+       * -----------------------------------------------------------------------
        */
       var $post_count = $data.outline.count_total;
   
       
       /*
        * ローディングの停止
-       * -------------------------------------------------------------------------
+       * -----------------------------------------------------------------------
        */
       $('.content-loader').hide();
       
@@ -90,89 +90,92 @@ $(function ()
         {
           /*
            * ポスト一覧テンプレートの読み込み
-           * -------------------------------------------------------------------------
+           * -------------------------------------------------------------------
            */
-          // $.get('tpl/posts.html', {dataType: 'html'}).done(function($template)
-          // {
+          $('#posts').append($template_posts);
+
+
+          /*
+           * データの書き出し
+           * -------------------------------------------------------------------
+           */
+          // Title
+          $('.post-heading').filter(':last').html('<a href="?post_id=' + $post.id + '">' + $post.title + '</a>');
           
+          // Eyecatch
+          if ($post.eyecatch)
+            $('.post-eyecatch').filter(':last').html('<a href="?post_id=' + $post.id + '"><img src="' + $post.eyecatch + '" srcset="' + $post.eyecatch_1x + ' 1x, ' + $post.eyecatch_2x + ' 2x" alt="' + $post.title + '"></a>');
           
-            $('#posts').append($template_posts);
-  
-  
-            /*
-             * データの書き出し
-             * -------------------------------------------------------------------------
-             */
-            // Title
-            $('.post-heading').filter(':last').html('<a href="?post_id=' + $post.id + '">' + $post.title + '</a>');
-            
-            // Eyecatch
-            if ($post.eyecatch)
-              $('.post-eyecatch').filter(':last').html('<a href="?post_id=' + $post.id + '"><img src="' + $post.eyecatch + '" srcset="' + $post.eyecatch_1x + ' 1x, ' + $post.eyecatch_2x + ' 2x" alt="' + $post.title + '"></a>');
-            
-            // Publish Date
-            $('.post-date').filter(':last').text($post.publish_date);
-  
-            // Content
-            $('.post-outline').filter(':last').text($post.content);
-            if ($post.content_cut_flg == 1)
+          // Publish Date
+          $('.post-date').filter(':last').text($post.publish_date);
+
+          // Content
+          $('.post-outline').filter(':last').text($post.content);
+          if ($post.content_cut_flg == 1)
+          {
+            $('.post-outline').filter(':last').append('...<span class="post-readmore"><a href="?post_id='+$post.id+'">&raquo; 続きを読む</a></span>');
+          }
+          
+          // Page View
+          if ($post.counter !== undefined && $post.counter.length !== 0)
+            $.each($post.counter, function($key, $counter)
             {
-              $('.post-outline').filter(':last').append('...<span class="post-readmore"><a href="?post_id='+$post.id+'">&raquo; 続きを読む</a></span>');
-            }
-            
-            // Page View
-            if ($post.counter !== undefined && $post.counter.length !== 0)
-              $.each($post.counter, function($key, $counter)
+              if ($key == 1)
               {
-                if ($key == 1)
-                {
-                  $('.post-counter').filter(':last').html('<i class="fas fa-eye"></i> ' + $counter.count + ' views');
-                }
-              });
-  
-            // Category
-            if ($post.categories.length !== 0)
-            {
-              var $html = '<i class="fa fa-tag" aria-hidden="true"></i> ';
-              $.each($post.categories, function($key_cat, $category)
-              {
-                $html += '<a class="narrow" href="?category=' + $category.slug + '&category_text=' + $category.label + '">' + $category.label + '</a>'
-              });
-              $('.post-category').filter(':last').html($html);
-            }
-  
-            // Tag
-            if ($post.tags.length !== 0)
-            {
-              var $html = '<i class="fa fa-tags" aria-hidden="true"></i>';
-              $.each($post.tags, function($key_tag, $tag)
-              {
-                $html += '<a href="?tag=' + $tag.slug + '&tag_text=' + $tag.label + '">' + $tag.label + '</a>'
-              });
-              $('.post-tag').filter(':last').html($html);
-            }
-            
-            // Recommend
-            if ($post.anchor > 0)
-            {
-              var $html= 'recommend : ';
-              for ($i_anchor = 1; $i_anchor <= $post.anchor; $i_anchor ++)
-              {
-                $html += '<i class="fa fa-star" aria-hidden="true"></i> ';
+                $('.post-counter').filter(':last').html('<i class="fas fa-eye"></i> ' + $counter.count + ' views');
               }
-              $('.post-recommend').filter(':last').html($html);
+            });
+
+          // Category
+          if ($post.categories.length !== 0)
+          {
+            var $html = '<i class="fa fa-tag" aria-hidden="true"></i> ';
+            $.each($post.categories, function($key_cat, $category)
+            {
+              $html += '<a class="narrow" href="?category=' + $category.slug + '&category_text=' + $category.label + '">' + $category.label + '</a>'
+            });
+            $('.post-category').filter(':last').html($html);
+          }
+
+          // Tag
+          if ($post.tags.length !== 0)
+          {
+            var $html = '<i class="fa fa-tags" aria-hidden="true"></i>';
+            $.each($post.tags, function($key_tag, $tag)
+            {
+              $html += '<a href="?tag=' + $tag.slug + '&tag_text=' + $tag.label + '">' + $tag.label + '</a>'
+            });
+            $('.post-tag').filter(':last').html($html);
+          }
+          
+          // Recommend
+          if ($post.anchor > 0)
+          {
+            var $html= 'recommend : ';
+            for ($i_anchor = 1; $i_anchor <= $post.anchor; $i_anchor ++)
+            {
+              $html += '<i class="fa fa-star" aria-hidden="true"></i> ';
             }
+            $('.post-recommend').filter(':last').html($html);
+          }
+
+          // Author
+          $('.post-author').html('Author : <a href="?clear=1&amp;created_by=' + $post.created_by + '&amp;author=' + $post.author + '">' + $post.author + '</a>');
   
-            // Author
-            $('.post-author').html('Author : <a href="./?clear=1&amp;created_by=' + $post.created_by + '&amp;author=' + $post.author + '">' + $post.author + '</a>');
   
-            // Social Line
-            $('.line').attr('href', 'https://social-plugins.line.me/lineit/share?url=' + location.href);
-  
-            // Social Twitter
-            $('.twitter').attr('href', 'https://twitter.com/intent/tweet?text=' + encodeURI('POSTEASE SAMPLE') + '&url=' + location.href + '&hashtags=postease');
-            
-          // });
+          /*
+           * ソーシャルボタンの生成
+           * -------------------------------------------------------------------
+           */
+          // Social Facebook
+          $('.facebook').attr('href', 'http://www.facebook.com/share.php?u=' + location.href);
+          
+          // Social Line
+          $('.line').attr('href', 'https://social-plugins.line.me/lineit/share?url=' + location.href);
+
+          // Social Twitter
+          $('.twitter').attr('href', 'https://twitter.com/intent/tweet?text=' + encodeURI('POSTEASE SAMPLE') + '&url=' + location.href + '&hashtags=postease');
+          
         });
       }
       else {
@@ -182,7 +185,7 @@ $(function ()
   
       /**
        * ページネーション生成
-       * ---------------------------------------------------------------------
+       * -----------------------------------------------------------------------
        */
       if ($post_count > 0)
       {
@@ -212,10 +215,10 @@ $(function ()
       }
       
       
-      
       /**
        * 現在の検索条件を表示
-       * -------------------------------------------------------------------- */
+       * -----------------------------------------------------------------------
+       */
       var $html_condition = '';
       if (getParam() != false)
       {

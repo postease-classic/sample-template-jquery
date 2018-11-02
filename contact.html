@@ -9,7 +9,7 @@
 	<link rel="stylesheet" href="style.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<script src="js/common_functions.js"></script>
+	<script src="js/util.js"></script>
 </head>
 <body>
 <div class="container">
@@ -57,24 +57,12 @@
 <footer>
 	Powered by POSTEASE install type.
 </footer>
-<script>
-  
-  /**
-   * 環境設定
-   * -------
-   * Note:
-   * 環境に合わせて変更してください。
-   * ---------------------------------------------------------------------------
-   */
-    
-    // APIベースURL
-    // POSTEASEの管理画面URL + '/api/json.php' がAPIのベースURLになります。
-  var $api_base = '//' + document.domain + '/manage/api/json.php';
 
-</script>
+<!-- 設定 -->
+<script src="js/config.js" async></script>
 
-<!-- フォーム送信＆メール送信コード -->
-<script src="js/submit_form.js"></script>
+<!-- [APIリクエスト] フォーム送信＆メール送信コード -->
+<script src="js/api/submit_form.js"></script>
 
 </body>
 </html>
