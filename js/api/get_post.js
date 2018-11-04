@@ -32,7 +32,7 @@ $(function()
          * コンソールで取得データを確認するには以下をコメントインしてください。
          * ---------------------------------------------------------------------
          */
-        //console.log(JSON.stringify($post,null,'\t'));
+        console.log(JSON.stringify($post,null,'\t'));
     
         
         /*
@@ -136,6 +136,18 @@ $(function()
           $('.post-recommend').html($html);
         }
   
+        // Related Posts
+        if ($post.relations.length !== 0)
+        {
+          var $html = '<h3>関連ポスト</h3>';
+          $html += '<ul>';
+          $.each($post.relations, function($key_relation, $relation)
+          {
+            $html += '<li><a href="?post_id=' + $relation.id + '"><i class="fas fa-arrow-circle-right"></i> ' + $relation.title + '</a></li>'
+          });
+          $html += '</ul>';
+          $('.post-relations').html($html);
+        }
   
         /*
          * ソーシャルボタンの生成
