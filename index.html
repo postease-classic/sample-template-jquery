@@ -19,7 +19,6 @@
   <link rel="stylesheet" href="style.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" async></script>
-  <script src="js/util.js"></script>
 </head>
 <body>
 <div class="container">
@@ -48,7 +47,12 @@
 			</form>
 		</div>
 		<!-- // 検索ボックス -->
-
+    
+    <!-- 固定ポスト -->
+    <div id="fixed" class="fixed sidebar-block">
+      <h3>固定ポスト</h3>
+    </div>
+    
 		<!-- アーカイブ -->
 		<div id="archive" class="archive sidebar-block">
       <h3>アーカイブ</h3>
@@ -65,14 +69,23 @@
     </div>
     
     <!-- お問合わせリンク -->
-    <div class="sideContent">
-      <h3 class="sideContent-heading">リンク</h3>
-      <div class="sideContent-content">
-        <i class="far fa-envelope"></i>
-        <a href="contact.html">お問い合わせはこちら</a>
-      </div>
+    <div class="links sidebar-block">
+      <h3>リンク</h3>
+      <ul class="sideContent-content">
+        <li><i class="fas fa-envelope"></i> <a href="contact.html">お問い合わせはこちら</a></li>
+      </ul>
     </div>
     
+    
+  <div class="links sidebar-block">
+    <h3><i class="fas fa-external-link-alt"></i> 外部リンク</h3>
+    <ul class="sideContent-content">
+      <li><a href="https://postease.in" target="_blank">POSTEASE公式サイト</a></li>
+      <li><a href="https://doteki.jp" target="_blank">CMS導入サービス「DOTEKI」</a></li>
+      <li><a href="https://github.com/postease-cms/sample-template-jquery-basic/archive/master.zip" target="_blank"><i class="fas fa-cloud-download-alt"></i> サイトのソースをダウンロード</a></li>
+    </ul>
+  </div>
+  
 	</div>
 	<!-- // サイドバー -->
   
@@ -87,6 +100,13 @@
   <small>Powered by POSTEASE</small>
 </footer>
 
+<!-- 設定 -->
+<script src="js/config.js"></script>
+
+<!-- ユーティリティ -->
+<script src="js/util.js"></script>
+
+<!-- パラメータ取得 -->
 <script>
   
   /**
@@ -137,17 +157,18 @@
   
 </script>
 
-<!-- 設定 -->
-<script src="js/config.js" async></script>
 
 <!-- テンプレート -->
-<script src="js/templates.js" async></script>
+<script src="js/templates.js" defer></script>
 
 <!-- [APIリクエスト] ポスト一覧 取得＆表示コード -->
-<script src="js/api/get_posts.js" async></script>
+<script src="js/api/get_posts.js" defer></script>
 
 <!-- [APIリクエスト] ポスト詳細 取得＆表示コード -->
-<script src="js/api/get_post.js" async></script>
+<script src="js/api/get_post.js" defer></script>
+
+<!-- [APIリクエスト] 固定コンテンツ一覧 取得＆表示コード -->
+<script src="js/api/get_posts_fixed.js" async></script>
 
 <!-- [APIリクエスト] アーカイブ一覧 取得＆表示コード -->
 <script src="js/api/get_archives.js" async></script>

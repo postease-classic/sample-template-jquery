@@ -49,6 +49,8 @@ var $template_post =
   '\t</div>\n' +
   '\t<div class="post-content"></div>\n' +
   '\t<span class="post-signature"></span>\n' +
+  '\t<div class="post-relations">\n' +
+  '\t</div>\n' +
   '\t<div class="post-prevnext">\n' +
   '\t\t<span class="post-back">\n' +
   '\t\t\t<a href="#" onclick="javascript:window.history.back(-1);return false;">\n' +
