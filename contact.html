@@ -8,8 +8,7 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css">
 	<link rel="stylesheet" href="style.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<script src="js/util.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" defer></script>
 </head>
 <body>
 <div class="container">
@@ -26,6 +25,7 @@
 		<!-- コンタクトフォーム // -->
 		<div class="contact">
 			<h2 class="contact-heading">お問い合わせ</h2>
+      <p class="contact-attention">このお問い合わせフォームは実装・動作サンプルです。<br>実際のお問い合わせには対応できませんのでご注意ください。</p>
 			<dl>
 				<dt>お名前</dt>
 				<dd>
@@ -58,11 +58,14 @@
 	Powered by POSTEASE install type.
 </footer>
 
+<!-- ユーティリティ -->
+<script src="js/util.js"></script>
+
 <!-- 設定 -->
-<script src="js/config.js" async></script>
+<script src="js/config.js"></script>
 
 <!-- [APIリクエスト] フォーム送信＆メール送信コード -->
-<script src="js/api/submit_form.js"></script>
+<script src="js/api/submit_form.js" defer></script>
 
 </body>
 </html>
