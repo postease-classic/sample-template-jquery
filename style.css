@@ -259,7 +259,7 @@ main {
 }
 .post-content img {
 	max-width: 100%;
-	padding: 1em 0;
+	margin: 1em 0;
 }
 .post-content iframe {
 	max-width: 100%;
@@ -561,6 +561,10 @@ textarea {
 .contact-heading {
 	font-size: 2em;
 	margin-bottom: 1.5em;
+	text-align: center;
+}
+.contact-attention {
+	margin: 3em;
 	text-align: center;
 }
 .contact-message {
