@@ -15,8 +15,10 @@ $(function(){
    */
   var $config_posts =
     {
-      'limit'      : 5,
-      'created_by' : 1,
+      'limit'        : 3,
+      'author_id'    : 1,
+      'with_counter' : 0,
+      'with_custome' : 0,
     };
   
   
