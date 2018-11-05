@@ -9,32 +9,43 @@
 ---
 
 
-### ユーザー画面
+## ユーザー画面
 
-#### 一般のサーバ上で確認する
+ユーザー画面は一般的なサーバーと Github Pages の両方でホスティングしています。  また、ソースをダウンロードしてローカルで確認していただくこともできます（どこからでもCMSの登録データを取得・表示できる仕組みです）。
+
+#### 一般のサーバーで確認する
 
 https://jquery-bsc.postease-sample.com
 
-#### Github Pages 上で確認する
+#### Github Pages で確認する
 
+https://postease-cms.github.io/sample-template-jquery-basic/
 
-
-
-### 管理画面
-
-[こちら](https://manage.postease-sample.com)から管理画面にログインできます。
-
-##### アカウント
-user
-
-##### パスワード
-111111
-
+#### ソースをローカルにダウンロードして確認する
+https://github.com/postease-cms/sample-template-jquery-basic/archive/master.zip
 
 ---
 
 
-### バージョン履歴
+## 管理画面
+
+[こちら](https://manage.postease-sample.com)からPOSTEASEの管理画面にログインしてコンテンツの編集ができます。  
+
+※ 管理画面から登録したデータは不特定多数のユーザーから閲覧されます。不適切な投稿などはお控えください。  
+※ 毎時00分にすべてのデータがリセットされます。
+
+```
+アカウント
+user
+
+パスワード
+111111
+```
+
+---
+
+
+## バージョン履歴
 現在のバージョン 1.0
 
 - v1.0 (05.Nov.2018, first release)
