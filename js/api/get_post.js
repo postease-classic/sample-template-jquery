@@ -164,6 +164,7 @@ $(function()
         
       }
       else {
+        $('.content-loader').hide();
         $('main').append('<p>お探しのポストは見つかりませんでした。</p>');
       }
       
