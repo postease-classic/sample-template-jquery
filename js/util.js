@@ -107,7 +107,7 @@ function getCookie($key)
 /**
  * HTML to Plane Text
  * @param $str
- * @returns {string | bool(false)}
+ * @returns string
  */
 function html2text($str)
 {
@@ -115,7 +115,7 @@ function html2text($str)
 	{
 		return $str.replace(/(\s|\&nbsp;|<(\/)*("[^"]*"|'[^']*'|[^'">])*>)/g,'');
 	}
-	return false;
+	return '';
 }
 
 
