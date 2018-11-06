@@ -89,7 +89,7 @@ $(function()
         $('.post-signature').text('Written by : ' + $post.author);
 
         // Author
-        $('.post-author').html('Author : <a href="?clear=1&amp;created_by=' + $post.created_by + '&amp;author=' + $post.author + '">' + $post.author + '</a>');
+        $('.post-author').html('Author : <a href="?clear=1&amp;author_id=' + $post.author_id + '&amp;author=' + $post.author + '">' + $post.author + '</a>');
 
         // Page View
         if ($post.counter !== undefined && $post.counter.length !== 0)
