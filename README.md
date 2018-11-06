@@ -29,7 +29,7 @@
 
 ## 2. 管理画面へのログイン
 
-[こちら](https://manage.postease-sample.com)からPOSTEASEの管理画面にログインしてコンテンツの編集ができます。  
+**[POSTEASEの管理画面にログイン](https://manage.postease-sample.com)**してコンテンツの編集ができます。  
 
 ```
 URL
