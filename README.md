@@ -20,7 +20,7 @@
 
 #### 一般的なLAMP環境で動的ホスティング
 
-https://jquery-bsc.postease-sample.com
+[動的ホスティング環境で確認](https://jquery-bsc.postease-sample.com){:target="_blank"}
 
 #### Github Pages での静的ホスティング
 
