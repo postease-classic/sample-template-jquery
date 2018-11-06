@@ -12,7 +12,6 @@
 3. ファイルのダウンロード、実装コードの確認
 
 
-
 ---
 
 
@@ -38,6 +37,9 @@ https://postease-cms.github.io/sample-template-jquery-basic/
 [こちら](https://manage.postease-sample.com)からPOSTEASEの管理画面にログインしてコンテンツの編集ができます。  
 
 ```
+URL
+https://manage.postease-sample.com
+
 アカウント
 user
 
@@ -59,14 +61,18 @@ https://github.com/postease-cms/sample-template-jquery-basic/archive/master.zip
 ソースをダウンロードしてzipファイルを解凍後、index.html をブラウザで開いてください。
 ローカルでもPOSTEASEからデータを取得して表示することを確認いただけます。
 
+---
 
-### その他留意事項
+## その他留意事項
 
 - Github Pages およびローカル環境で動作させるため、あえてURLは整形していません。
 - ローカルではソーシャルボタンなどが正常に機能しません。
 
 
-### バージョン履歴
-現在のバージョン 1.0
+---
+
+## バージョン履歴
+
+**現在のバージョン 1.0**
 
 - v1.0 (05.Nov.2018, first release)
