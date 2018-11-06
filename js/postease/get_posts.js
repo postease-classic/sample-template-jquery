@@ -34,7 +34,7 @@ $(function ()
         'category'       : $category,
         'tag'            : $tag,
         'created_by'     : $created_by,
-        'content_length' : 100,
+        'content_length' : 130,
       };
   
     
