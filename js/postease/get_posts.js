@@ -160,7 +160,7 @@ $(function ()
           }
 
           // Author
-          $('.post-author').html('Author : <a href="?clear=1&amp;created_by=' + $post.created_by + '&amp;author=' + $post.author + '">' + $post.author + '</a>');
+          $('.post-author').filter(':last').html('Author : <a href="?clear=1&amp;created_by=' + $post.created_by + '&amp;author=' + $post.author + '">' + $post.author + '</a>');
   
   
           /*
