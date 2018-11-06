@@ -32,7 +32,7 @@ $(function()
          * コンソールで取得データを確認するには以下をコメントインしてください。
          * ---------------------------------------------------------------------
          */
-        console.log(JSON.stringify($post,null,'\t'));
+        //console.log(JSON.stringify($post,null,'\t'));
     
         
         /*
