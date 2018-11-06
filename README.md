@@ -2,7 +2,8 @@
 ## Coded in jQuery
 
 
-このサイトはヘッドレスCMS「POSTEASE（ポストイーズ）」を利用して javascript（jQuery）のみで構築されています。
+**ヘッドレスCMS「POSTEASE（ポストイーズ）」を利用して javascript（jQuery）のみで構築されたWEBサイトのサンプルソースです。
+実装コードを確認していただけるとともに、実際にPOSTEASEの管理画面を操作しデータの反映をご確認いただけます。**
 ソースをダウンロードしてローカルで index.html をブラウザで開いても動作します。
 
 
