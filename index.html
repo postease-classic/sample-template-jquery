@@ -36,7 +36,7 @@
   </main>
 
 	<!-- サイドバー // -->
-	<div class="sidebar col-md-3 col-md-offset-1">
+	<div class="sidebar row col-md-3 col-md-offset-1">
 
 		<!-- 検索ボックス // -->
 		<div class="search">
@@ -153,34 +153,35 @@
 
   // 絞込表示 作成者
   var $author = (getParam('author')) ? getParam('author') : null;
-
   
 </script>
 
+<!-- ポスト一覧テンプレート -->
+<script src="tpl/posts.js" defer></script>
 
-<!-- テンプレート -->
-<script src="js/templates.js" defer></script>
+<!-- ポスト詳細テンプレート -->
+<script src="tpl/post.js" defer></script>
 
 <!-- [APIリクエスト] ポスト一覧 取得＆表示コード -->
-<script src="js/api/get_posts.js" defer></script>
+<script src="js/postease/get_posts.js" defer></script>
 
 <!-- [APIリクエスト] ポスト詳細 取得＆表示コード -->
-<script src="js/api/get_post.js" defer></script>
+<script src="js/postease/get_post.js" defer></script>
 
 <!-- [APIリクエスト] 固定コンテンツ一覧 取得＆表示コード -->
-<script src="js/api/get_posts_fixed.js" defer></script>
+<script src="js/postease/get_posts_fixed.js" async></script>
 
 <!-- [APIリクエスト] アーカイブ一覧 取得＆表示コード -->
-<script src="js/api/get_archives.js" async></script>
+<script src="js/postease/get_archives.js" async></script>
 
 <!-- [APIリクエスト] カテゴリ一覧 取得＆表示コード -->
-<script src="js/api/get_categories.js" async></script>
+<script src="js/postease/get_categories.js" async></script>
 
 <!-- [APIリクエスト] タグ一覧 取得＆表示コード -->
-<script src="js/api/get_tags.js" async></script>
+<script src="js/postease/get_tags.js" async></script>
 
 <!-- [APIリクエスト] ページビュー カウント実行コード -->
-<script src="js/api/set_counter.js" async></script>
+<script src="js/postease/set_counter.js" async></script>
 
 <!-- Google Analytics (for general hosting)  -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-82870921-4"></script>
