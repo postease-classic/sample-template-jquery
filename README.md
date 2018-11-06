@@ -18,7 +18,7 @@
 
 サンプルサイトは２通りのホスティングをしています。
 
-#### [一般的なLAMP環境で動的ホスティング](https://jquery-bsc.postease-sample.com)
+#### [LAMP環境でホスティング](https://jquery-bsc.postease-sample.com)
 
 #### [Github Pages で静的ホスティング](https://postease-cms.github.io/sample-template-jquery-basic)
 
