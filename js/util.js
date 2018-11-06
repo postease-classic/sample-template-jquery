@@ -30,6 +30,7 @@ function getParam($key)
 }
 
 
+
 /**
  * Set Cookie
  * @param $key
@@ -80,6 +81,7 @@ function setCookie($key, $value, $expire_hours)
 }
 
 
+
 /**
  * Get Cookie
  * @param $key
@@ -104,6 +106,7 @@ function getCookie($key)
 }
 
 
+
 /**
  * HTML to Plane Text
  * @param $str
@@ -119,10 +122,11 @@ function html2text($str)
 }
 
 
+
 /**
  * New Line to BR
  * @param str
- * @returns {string | bool(false)}
+ * @returns string
  */
 function nl2br(str)
 {
@@ -131,14 +135,15 @@ function nl2br(str)
 		str = str.replace(/(\r\n|\r|\n)/g, '<br>');
     return str;
   }
-  return false;
+  return '';
 }
+
 
 
 /**
  * BR to New Line
  * @param str
- * @returns {string | bool(false)}
+ * @returns string
  */
 function br2nl(str)
 {
@@ -147,7 +152,7 @@ function br2nl(str)
     str = str.replace('<br>', '\n');
     return str;
 	}
-	return false;
+	return '';
 }
 
 

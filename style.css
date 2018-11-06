@@ -173,7 +173,6 @@ main {
 }
 .post-eyecatch {
 	display: inline;
-	max-width: 70%;
 }
 .post-eyecatch img {
 	max-width: 100%;
@@ -184,10 +183,9 @@ main {
 	opacity: 0.8;
 }
 .post-metas {
-	display: inline-block;
+	display: block;
 	margin-top: 1em;
 	margin-left: 1em;
-	max-width: 30%;
 }
 .post-date {
 	display: block;
@@ -309,14 +307,6 @@ main {
 
 @media (max-width: 992px)
 {
-	.post-eyecatch {
-		display: block;
-		max-width: 100%;
-		text-align: center;
-	}
-	.post-metas {
-		max-width: 100%;
-	}
 	.post-prevnext {
 		display: block;
 	}
