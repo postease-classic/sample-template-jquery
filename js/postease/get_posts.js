@@ -33,7 +33,7 @@ $(function ()
         'day'            : $day,
         'category'       : $category,
         'tag'            : $tag,
-        'created_by'     : $created_by,
+        'author_id'      : $author_id,
         'content_length' : 130,
       };
   
@@ -160,7 +160,7 @@ $(function ()
           }
 
           // Author
-          $('.post-author').filter(':last').html('Author : <a href="?clear=1&amp;created_by=' + $post.created_by + '&amp;author=' + $post.author + '">' + $post.author + '</a>');
+          $('.post-author').filter(':last').html('Author : <a href="?clear=1&amp;author_id=' + $post.author_id + '&amp;author=' + $post.author + '">' + $post.author + '</a>');
   
   
           /*
