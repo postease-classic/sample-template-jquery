@@ -16,12 +16,17 @@
 
 ## 1. サンプルサイトの確認
 
-サンプルサイトは２通りのホスティングをしています。
+サンプルサイトは３通りのホスティングをしています。
+（すべて同じ内容です）
 
 #### [LAMP環境でホスティング](https://jquery-bsc.postease-sample.com)
 
 #### [Github Pages で静的ホスティング](https://postease-cms.github.io/sample-template-jquery-basic)
 
+#### [Amazon S3 で静的ホスティング](https://s3-ap-northeast-1.amazonaws.com/postease.net)
+
+
+※ Github Pages および Amazon S3 には独自ドメインをあてていません。
 
 
 ---
