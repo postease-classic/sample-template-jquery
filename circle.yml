@@ -1,0 +1,19 @@
+version: 2
+jobs:
+  # build job omitted for brevity
+  build:
+    docker:
+      - image: circleci/python:2.7-jessie
+    working_directory: ~/circleci-docs
+    steps:
+      - checkout
+      - run:
+          name: Install awscli
+          command: sudo pip install awscli
+      - deploy:
+          name: Deploy to S3
+          command: |
+            if [ "${CIRCLE_BRANCH}" == "master" ]; then
+              aws s3 sync / s3://postease.sample.com/ --delete
+            fi
+
