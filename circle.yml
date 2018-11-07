@@ -1,7 +1,7 @@
 version: 2
 jobs:
   # build job omitted for brevity
-  deploy:
+  build:
     docker:
       - image: circleci/python:2.7-jessie
     working_directory: ~/circleci-docs
