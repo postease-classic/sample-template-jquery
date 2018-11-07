@@ -2,7 +2,7 @@ version: 2
 jobs:
   # build job omitted for brevity
   build:
-    working_directory: /tmp
+    working_directory: /tmp/vasko
     docker:
       - image: circleci/python:3.6.2-stretch-browsers
     steps:
@@ -12,7 +12,7 @@ jobs:
           command: sudo pip install awscli
       - deploy:
           name: Deploy to S3
-          command: aws s3 sync /tmp s3://postease-sample.com/ --delete
+          command: aws s3 sync /tmp/vasko s3://postease-sample.com/ --delete
 
 workflows:
   version: 2
