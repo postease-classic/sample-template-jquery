@@ -19,11 +19,11 @@
 サンプルサイトは３通りのホスティングをしています。
 （すべて同じ内容です）
 
-#### [LAMP環境でホスティング](https://jquery-bsc.postease-sample.com)
+- **[LAMP環境でホスティング](https://jquery-bsc.postease-sample.com)**
 
-#### [Github Pages で静的ホスティング](https://github.postease-sample.com)
+- **[Github Pages で静的ホスティング](https://github.postease-sample.com)**
 
-#### [Amazon S3 で静的ホスティング](http://s3.postease-sample.com/index.html)
+- **[Amazon S3 で静的ホスティング](http://s3.postease-sample.com/index.html)**
 
 
 
