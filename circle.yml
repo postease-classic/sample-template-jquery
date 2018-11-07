@@ -14,6 +14,6 @@ jobs:
           name: Deploy to S3
           command: |
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
-              aws s3 sync / s3://postease.sample.com/ --delete
+              aws s3 sync / s3://postease-sample.com/ --delete
             fi
 
