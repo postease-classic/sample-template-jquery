@@ -12,8 +12,16 @@ jobs:
           command: sudo pip install awscli
       - deploy:
           name: Deploy to S3
-          command: |
-            if [ "${CIRCLE_BRANCH}" == "master" ]; then
-              aws s3 sync / s3://postease-sample.com/ --delete
-            fi
+          command: aws s3 sync / s3://postease-sample.com/ --delete
 
+workflows:
+  version: 2
+  build-deploy:
+    jobs:
+      - build
+      - deploy:
+          requires:
+            - build
+          filters:
+            branches:
+              only: master
