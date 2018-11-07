@@ -77,3 +77,9 @@ https://github.com/postease-cms/sample-template-jquery-basic/archive/master.zip
 **現在のバージョン 1.0**
 
 - v1.0 (05.Nov.2018, first release)
+
+
+## お問い合わせ
+
+POSTEASEに関するお問い合わせはこちらまで
+contact@postease.in
