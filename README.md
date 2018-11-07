@@ -21,12 +21,11 @@
 
 #### [LAMP環境でホスティング](https://jquery-bsc.postease-sample.com)
 
-#### [Github Pages で静的ホスティング](https://postease-cms.github.io/sample-template-jquery-basic)
+#### [Github Pages で静的ホスティング](https://github.postease-sample.com)
 
-#### [Amazon S3 で静的ホスティング](https://s3-ap-northeast-1.amazonaws.com/postease.net/index.html)
+#### [Amazon S3 で静的ホスティング](http://s3.postease-sample.com/index.html)
 
 
-※ Github Pages および Amazon S3 には独自ドメインをあてていません。
 
 
 ---
