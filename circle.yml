@@ -2,9 +2,9 @@ version: 2
 jobs:
   # build job omitted for brevity
   build:
+    working_directory: /tmp
     docker:
-      - image: circleci/python:2.7-jessie
-    working_directory: ~/circleci-docs
+      - image: circleci/python:3.6.2-stretch-browsers
     steps:
       - checkout
       - run:
@@ -12,7 +12,7 @@ jobs:
           command: sudo pip install awscli
       - deploy:
           name: Deploy to S3
-          command: aws s3 sync ~/circleci-docs s3://postease-sample.com/ --delete
+          command: aws s3 sync /tmp s3://postease-sample.com/ --delete
 
 workflows:
   version: 2
