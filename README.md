@@ -23,7 +23,7 @@
 
 #### [Github Pages で静的ホスティング](https://postease-cms.github.io/sample-template-jquery-basic)
 
-#### [Amazon S3 で静的ホスティング](https://s3-ap-northeast-1.amazonaws.com/postease.net)
+#### [Amazon S3 で静的ホスティング](https://s3-ap-northeast-1.amazonaws.com/postease.net/index.html)
 
 
 ※ Github Pages および Amazon S3 には独自ドメインをあてていません。
