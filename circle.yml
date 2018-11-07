@@ -12,7 +12,7 @@ jobs:
           command: sudo pip install awscli
       - deploy:
           name: Deploy to S3
-          command: aws s3 sync / s3://postease-sample.com/ --delete
+          command: aws s3 sync /var/www/html/jquery-bsc.postease-sample.com/public/ s3://postease-sample.com/ --delete
 
 workflows:
   version: 2
